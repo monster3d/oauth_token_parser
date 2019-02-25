@@ -1,5 +1,5 @@
 {
-    "name": "ibc/OAuthTokenParser",
+    "name": "ibc/oauthtokenparser",
     "description": "",
     "type": "library",
     "require": {
