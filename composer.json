@@ -1,5 +1,5 @@
 {
-    "name": "OAuthTokenParser",
+    "name": "ibc/OAuthTokenParser",
     "description": "",
     "type": "library",
     "require": {
@@ -11,14 +11,12 @@
     },
     "autoload": {
         "psr-4": {
-            "OAuthTokenParser": "src"
+            "OAuthTokenParser\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OAuthTokenParser": [
-                "test/unit", 
-            ]
+            "OAuthTokenParser\\": "tests/"
         }
     }
 }
