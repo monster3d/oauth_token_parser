@@ -44,8 +44,6 @@ class TokenParser
         $expiration = $parsedToken->getClaim('exp');
         $clientId   = $parsedToken->getClaim('aud');
 
-        $result = new Result($isValid, $expiration <= time(), $userId, $clientId);
-
-        return $result;
+        return new Result($isValid, $expiration <= time(), $userId, $clientId);
     }
 }
