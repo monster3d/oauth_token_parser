@@ -1,11 +1,11 @@
 <?php
 
-namespace OAutoTokenParser;
+namespace OAuthTokenParser;
 
 use Lcobucci\JWT\Parser;
 use Lcobucci\JWT\Signer\Key;
 use Lcobucci\JWT\Signer\Rsa\Sha256;
-use Air\SupplierGates\TokenParser\Result;
+use OAuthTokenParser\TokenParser\Result;
 
 class TokenParser
 {
@@ -42,8 +42,9 @@ class TokenParser
         $isValid    = $parsedToken->verify($signer, $publicKey);
         $userId     = (int)$parsedToken->getClaim('sub');
         $expiration = $parsedToken->getClaim('exp');
+        $clientId   = $parsedToken->getClaim('aud');
 
-        $result = new Result($isValid, $expiration <= time(), $userId);
+        $result = new Result($isValid, $expiration <= time(), $userId, $clientId);
 
         return $result;
     }
